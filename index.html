@@ -87,9 +87,18 @@
             background-color: #0a0a0a;
             margin-top: 3rem;
         }
-    </style>
+    
+/* Language switch */
+.language-switch{display:flex;justify-content:flex-end;gap:10px;max-width:800px;margin:20px auto 0;padding:0 20px}
+.language-switch button{background:#e67e22;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-weight:600}
+.language-switch button:hover{background:#cf6d16}
+.lang{display:none}.lang.active{display:block}
+
+</style>
 </head>
 <body>
+<div class='language-switch'><button onclick="changeLanguage('tr')">🇹🇷 TR</button><button onclick="changeLanguage('en')">🇬🇧 EN</button></div>
+<div id='tr' class='lang active'>
 
     <header>
         <h1>SPANCER STUDIOS</h1>
@@ -126,5 +135,24 @@
         <p>&copy; 2026 Spancer Studios. Tüm hakları saklıdır.</p>
     </footer>
 
+</div>
+<div id='en' class='lang'>
+<header><h1>SPANCER STUDIOS</h1><p>Independent Game Development Studio</p></header>
+<div class="container">
+<div class="section"><h2>About Us</h2><p>Spancer Studios is an independent game development studio dedicated to creating memorable, immersive and high-quality gaming experiences. We bring our passion for programming and creativity in game design to life through digital worlds.</p></div>
+<div class="section"><h2>Projects in Development</h2><div class="project"><h3>Quiz Fatihi</h3><span class="tag">Medieval</span> <span class="tag">Strategy</span> <span class="tag">Trivia</span><p>Set in the Middle Ages, Quiz Fatihi challenges your strategic thinking and knowledge in an exciting conquest adventure.</p></div></div>
+<div class="section"><h2>Contact</h2><p>For our games, collaborations, or simply to say hello:</p><p><strong>Email:</strong> hsyn.ekn@gmail.com</p></div>
+</div>
+<footer><p>&copy; 2026 Spancer Studios. All rights reserved.</p></footer>
+</div>
+<script>
+function changeLanguage(lang){
+document.querySelectorAll('.lang').forEach(e=>e.classList.remove('active'));
+document.getElementById(lang).classList.add('active');
+localStorage.setItem('spancer_lang',lang);
+document.documentElement.lang=lang;
+}
+changeLanguage(localStorage.getItem('spancer_lang')||'tr');
+</script>
 </body>
 </html>
