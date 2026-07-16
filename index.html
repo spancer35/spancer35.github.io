@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -87,72 +87,238 @@
             background-color: #0a0a0a;
             margin-top: 3rem;
         }
-    
-/* Language switch */
-.language-switch{display:flex;justify-content:flex-end;gap:10px;max-width:800px;margin:20px auto 0;padding:0 20px}
-.language-switch button{background:#e67e22;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-weight:600}
-.language-switch button:hover{background:#cf6d16}
-.lang{display:none}.lang.active{display:block}
 
-</style>
+
+        .language-switcher-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 18px;
+        }
+
+        .language-switcher {
+            display: inline-flex;
+            padding: 4px;
+            border: 1px solid #3a3a3a;
+            border-radius: 999px;
+            background: #151515;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.35);
+        }
+
+        .language-button {
+            min-width: 52px;
+            padding: 7px 14px;
+            border: 0;
+            border-radius: 999px;
+            background: transparent;
+            color: #aaaaaa;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .language-button:hover {
+            color: #ffffff;
+        }
+
+        .language-button.active {
+            background: #e67e22;
+            color: #ffffff;
+            box-shadow: 0 2px 6px rgba(230,126,34,0.35);
+        }
+
+        .language-button:focus-visible {
+            outline: 3px solid rgba(230,126,34,0.35);
+            outline-offset: 2px;
+        }
+
+        .lang {
+            display: none;
+        }
+
+        .lang.active {
+            display: block;
+        }
+
+        .email-link {
+            color: #e67e22;
+            text-decoration: none;
+        }
+
+        .email-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 2rem 16px;
+            }
+
+            header h1 {
+                font-size: 2.15rem;
+            }
+
+            .container {
+                margin: 2rem auto;
+            }
+        }
+
+  </style>
 </head>
+
 <body>
-<div class='language-switch'><button onclick="changeLanguage('tr')">🇹🇷 TR</button><button onclick="changeLanguage('en')">🇬🇧 EN</button></div>
-<div id='tr' class='lang active'>
 
     <header>
         <h1>SPANCER STUDIOS</h1>
-        <p>Bağımsız Oyun Geliştirme Stüdyosu</p>
+        <p id="header-subtitle">Independent Game Development Studio</p>
+
+        <div class="language-switcher-wrapper">
+            <div class="language-switcher" role="group" aria-label="Language selection">
+                <button class="language-button" type="button" data-language="en" aria-pressed="false">EN</button>
+                <button class="language-button" type="button" data-language="tr" aria-pressed="false">TR</button>
+            </div>
+        </div>
     </header>
 
     <div class="container">
-        
-        <div class="section">
-            <h2>Hakkımızda</h2>
-            <p>Spancer Studios olarak, oyunculara unutulmaz, sürükleyici ve kaliteli deneyimler sunmayı hedefleyen bağımsız bir stüdyoyuz. Kodlamanın arkasındaki tutku ve oyun tasarımındaki yaratıcılığımızla hayallerimizi dijital dünyalara taşıyoruz.</p>
-        </div>
 
-        <div class="section">
-            <h2>Geliştirilmekte Olan Projeler</h2>
-            <div class="project">
-                <h3>Quiz Fatihi</h3>
-                <span class="tag">Orta Çağ</span>
-                <span class="tag">Strateji</span>
-                <span class="tag">Trivia</span>
-                <p>Orta Çağ'ın zorlu atmosferinde stratejik zekanı ve bilgi birikimini test eden yeni oyunumuz yapım aşamasında! Hem öğreten hem de fetih hissini sonuna kadar yaşatan bu maceraya hazır olun.</p>
+        <main id="en" class="lang">
+            <div class="section">
+                <h2>About Us</h2>
+                <p>
+                    At Spancer Studios, we are an independent studio focused on creating memorable,
+                    immersive, and high-quality experiences for players. With our passion for coding
+                    and creativity in game design, we bring our ideas to life in digital worlds.
+                </p>
             </div>
-        </div>
 
-        <div class="section">
-            <h2>İletişim</h2>
-            <p>Oyunlarımız, işbirlikleri veya sadece "merhaba" demek için bize ulaşabilirsiniz:</p>
-            <p><strong>E-posta:</strong> hsyn.ekn@gmail.com</p>
-        </div>
+            <div class="section">
+                <h2>Projects in Development</h2>
+                <div class="project">
+                    <h3>Quiz Fatihi</h3>
+                    <span class="tag">Medieval</span>
+                    <span class="tag">Strategy</span>
+                    <span class="tag">Trivia</span>
+                    <p>
+                        Our new game, which tests your strategic thinking and knowledge in the
+                        challenging atmosphere of the Middle Ages, is currently in development.
+                        Get ready for an adventure that both teaches and delivers the thrill of conquest.
+                    </p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Contact</h2>
+                <p>
+                    You can reach us about our games, collaborations, or simply to say hello:
+                </p>
+                <p>
+                    <strong>Email:</strong>
+                    <a class="email-link" href="mailto:hsyn.ekn@gmail.com">hsyn.ekn@gmail.com</a>
+                </p>
+            </div>
+        </main>
+
+        <main id="tr" class="lang">
+            <div class="section">
+                <h2>Hakkımızda</h2>
+                <p>
+                    Spancer Studios olarak oyunculara unutulmaz, sürükleyici ve kaliteli deneyimler
+                    sunmayı hedefleyen bağımsız bir stüdyoyuz. Kodlamaya duyduğumuz tutku ve oyun
+                    tasarımındaki yaratıcılığımızla fikirlerimizi dijital dünyalarda hayata geçiriyoruz.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>Geliştirilmekte Olan Projeler</h2>
+                <div class="project">
+                    <h3>Quiz Fatihi</h3>
+                    <span class="tag">Orta Çağ</span>
+                    <span class="tag">Strateji</span>
+                    <span class="tag">Trivia</span>
+                    <p>
+                        Orta Çağ'ın zorlu atmosferinde stratejik zekânı ve bilgi birikimini test eden
+                        yeni oyunumuz yapım aşamasında. Hem öğreten hem de fetih hissini sonuna kadar
+                        yaşatan bu maceraya hazır olun.
+                    </p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>İletişim</h2>
+                <p>
+                    Oyunlarımız, iş birlikleri veya yalnızca “merhaba” demek için bize ulaşabilirsiniz:
+                </p>
+                <p>
+                    <strong>E-posta:</strong>
+                    <a class="email-link" href="mailto:hsyn.ekn@gmail.com">hsyn.ekn@gmail.com</a>
+                </p>
+            </div>
+        </main>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 Spancer Studios. Tüm hakları saklıdır.</p>
+        <p id="studio-footer">&copy; 2026 Spancer Studios. All rights reserved.</p>
     </footer>
 
-</div>
-<div id='en' class='lang'>
-<header><h1>SPANCER STUDIOS</h1><p>Independent Game Development Studio</p></header>
-<div class="container">
-<div class="section"><h2>About Us</h2><p>Spancer Studios is an independent game development studio dedicated to creating memorable, immersive and high-quality gaming experiences. We bring our passion for programming and creativity in game design to life through digital worlds.</p></div>
-<div class="section"><h2>Projects in Development</h2><div class="project"><h3>Quiz Fatihi</h3><span class="tag">Medieval</span> <span class="tag">Strategy</span> <span class="tag">Trivia</span><p>Set in the Middle Ages, Quiz Fatihi challenges your strategic thinking and knowledge in an exciting conquest adventure.</p></div></div>
-<div class="section"><h2>Contact</h2><p>For our games, collaborations, or simply to say hello:</p><p><strong>Email:</strong> hsyn.ekn@gmail.com</p></div>
-</div>
-<footer><p>&copy; 2026 Spancer Studios. All rights reserved.</p></footer>
-</div>
-<script>
-function changeLanguage(lang){
-document.querySelectorAll('.lang').forEach(e=>e.classList.remove('active'));
-document.getElementById(lang).classList.add('active');
-localStorage.setItem('spancer_lang',lang);
-document.documentElement.lang=lang;
-}
-changeLanguage(localStorage.getItem('spancer_lang')||'tr');
-</script>
+    <script>
+        const studioTitles = {
+            en: "Spancer Studios",
+            tr: "Spancer Studios"
+        };
+
+        const studioSubtitles = {
+            en: "Independent Game Development Studio",
+            tr: "Bağımsız Oyun Geliştirme Stüdyosu"
+        };
+
+        const studioFooters = {
+            en: "© 2026 Spancer Studios. All rights reserved.",
+            tr: "© 2026 Spancer Studios. Tüm hakları saklıdır."
+        };
+
+        const studioButtons = document.querySelectorAll(".language-button");
+        const studioSections = document.querySelectorAll(".lang");
+        const studioSwitcher = document.querySelector(".language-switcher");
+        const studioSubtitle = document.getElementById("header-subtitle");
+        const studioFooter = document.getElementById("studio-footer");
+
+        function changeStudioLanguage(language) {
+            const selectedLanguage = language === "tr" ? "tr" : "en";
+
+            studioSections.forEach((section) => {
+                section.classList.toggle("active", section.id === selectedLanguage);
+            });
+
+            studioButtons.forEach((button) => {
+                const isActive = button.dataset.language === selectedLanguage;
+                button.classList.toggle("active", isActive);
+                button.setAttribute("aria-pressed", String(isActive));
+            });
+
+            document.documentElement.lang = selectedLanguage;
+            document.title = studioTitles[selectedLanguage];
+            studioSubtitle.textContent = studioSubtitles[selectedLanguage];
+            studioFooter.textContent = studioFooters[selectedLanguage];
+            studioSwitcher.setAttribute(
+                "aria-label",
+                selectedLanguage === "tr" ? "Dil seçimi" : "Language selection"
+            );
+
+            localStorage.setItem("spancer-studios-language", selectedLanguage);
+        }
+
+        studioButtons.forEach((button) => {
+            button.addEventListener("click", () => changeStudioLanguage(button.dataset.language));
+        });
+
+        const savedStudioLanguage = localStorage.getItem("spancer-studios-language");
+        const browserStudioLanguage = navigator.language.toLowerCase().startsWith("tr") ? "tr" : "en";
+
+        changeStudioLanguage(savedStudioLanguage || browserStudioLanguage);
+    </script>
+
 </body>
+
 </html>
