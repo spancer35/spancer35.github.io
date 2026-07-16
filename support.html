@@ -97,9 +97,13 @@
         font-size: 1.8rem;
       }
     }
-  </style>
+  
+.language-switch{display:flex;justify-content:flex-end;max-width:700px;margin:20px auto 0;padding:0 20px;gap:10px}
+.language-switch button{background:#2563eb;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer}
+.lang{display:none}.lang.active{display:block}
+</style>
 </head>
-<body>
+<body><div class='language-switch'><button onclick="changeLanguage('tr')">🇹🇷 TR</button><button onclick="changeLanguage('en')">🇬🇧 EN</button></div><div id='tr' class='lang active'>
 
   <div class="container">
     <div class="card">
@@ -137,5 +141,11 @@
     </footer>
   </div>
 
-</body>
+</div><div id='en' class='lang'><div class="container"><div class="card"><h1>Quiz Fatihi</h1><p class="subtitle">Official Support Page</p><p>Thank you for playing <strong>Quiz Fatihi</strong>! If you experience any issues, have questions, or would like to share feedback, we're happy to help.</p><h2>Common Help Topics</h2><ul><li>Game crashes or performance issues</li><li>Questions about gameplay or rules</li><li>Bug reports and technical problems</li><li>Suggestions for future updates</li><li>General feedback and support requests</li></ul><div class="contact"><strong>Contact Support</strong><br><br><a href="mailto:hsyn.ekn@gmail.com">hsyn.ekn@gmail.com</a></div></div><footer>© 2026 Quiz Fatihi. All rights reserved.</footer></div></div><script>
+document.getElementById('tr').innerHTML=document.getElementById('tr').innerHTML.replace('Official Support Page','Resmi Destek Sayfası').replace('Thank you for playing <strong>Quiz Fatihi</strong>! If you experience
+        any issues, have questions, or would like to share feedback, we\'re
+        happy to help.','<strong>Quiz Fatihi</strong> oynadığınız için teşekkür ederiz! Herhangi bir sorun yaşarsanız, sorularınız olursa veya geri bildirim paylaşmak isterseniz size yardımcı olmaktan memnuniyet duyarız.').replace('Common Help Topics','Yaygın Destek Konuları').replace('Game crashes or performance issues','Oyunun çökmesi veya performans sorunları').replace('Questions about gameplay or rules','Oynanış veya kurallarla ilgili sorular').replace('Bug reports and technical problems','Hata bildirimleri ve teknik sorunlar').replace('Suggestions for future updates','Gelecek güncellemeler için öneriler').replace('General feedback and support requests','Genel geri bildirim ve destek talepleri').replace('Contact Support','Destek İletişimi').replace('All rights reserved.','Tüm hakları saklıdır.');
+function changeLanguage(l){document.querySelectorAll('.lang').forEach(e=>e.classList.remove('active'));document.getElementById(l).classList.add('active');localStorage.setItem('support_lang',l);}
+changeLanguage(localStorage.getItem('support_lang')||'tr');
+</script></body>
 </html>
