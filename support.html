@@ -97,55 +97,183 @@
         font-size: 1.8rem;
       }
     }
-  
-.language-switch{display:flex;justify-content:flex-end;max-width:700px;margin:20px auto 0;padding:0 20px;gap:10px}
-.language-switch button{background:#2563eb;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer}
-.lang{display:none}.lang.active{display:block}
-</style>
+
+
+    .language-switcher-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 18px;
+    }
+
+    .language-switcher {
+      display: inline-flex;
+      padding: 4px;
+      border: 1px solid #d1d5db;
+      border-radius: 999px;
+      background: #f3f4f6;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .language-button {
+      min-width: 52px;
+      padding: 7px 14px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: #6b7280;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .language-button:hover {
+      color: #1f2937;
+    }
+
+    .language-button.active {
+      background: #2563eb;
+      color: #fff;
+      box-shadow: 0 2px 5px rgba(37, 99, 235, 0.28);
+    }
+
+    .language-button:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, 0.28);
+      outline-offset: 2px;
+    }
+
+    .lang {
+      display: none;
+    }
+
+    .lang.active {
+      display: block;
+    }
+
+  </style>
 </head>
-<body><div class='language-switch'><button onclick="changeLanguage('tr')">🇹🇷 TR</button><button onclick="changeLanguage('en')">🇬🇧 EN</button></div><div id='tr' class='lang active'>
+
+<body>
 
   <div class="container">
+    <div class="language-switcher-wrapper">
+      <div class="language-switcher" role="group" aria-label="Language selection">
+        <button class="language-button" type="button" data-language="en" aria-pressed="false">EN</button>
+        <button class="language-button" type="button" data-language="tr" aria-pressed="false">TR</button>
+      </div>
+    </div>
+
     <div class="card">
 
-      <h1>Quiz Fatihi</h1>
-      <p class="subtitle">
-        Official Support Page
-      </p>
+      <section id="en" class="lang">
+        <h1>Quiz Fatihi</h1>
+        <p class="subtitle">Official Support Page</p>
 
-      <p>
-        Thank you for playing <strong>Quiz Fatihi</strong>! If you experience
-        any issues, have questions, or would like to share feedback, we're
-        happy to help.
-      </p>
+        <p>
+          Thank you for playing <strong>Quiz Fatihi</strong>! If you experience
+          any issues, have questions, or would like to share feedback, we're
+          happy to help.
+        </p>
 
-      <h2>Common Help Topics</h2>
+        <h2>Common Help Topics</h2>
 
-      <ul>
-        <li>Game crashes or performance issues</li>
-        <li>Questions about gameplay or rules</li>
-        <li>Bug reports and technical problems</li>
-        <li>Suggestions for future updates</li>
-        <li>General feedback and support requests</li>
-      </ul>
+        <ul>
+          <li>Game crashes or performance issues</li>
+          <li>Questions about gameplay or rules</li>
+          <li>Bug reports and technical problems</li>
+          <li>Suggestions for future updates</li>
+          <li>General feedback and support requests</li>
+        </ul>
 
-      <div class="contact">
-        <strong>Contact Support</strong><br><br>
-        <a href="mailto:hsyn.ekn@gmail.com">hsyn.ekn@gmail.com</a>
-      </div>
+        <div class="contact">
+          <strong>Contact Support</strong><br><br>
+          <a href="mailto:hsyn.ekn@gmail.com">hsyn.ekn@gmail.com</a>
+        </div>
+      </section>
+
+      <section id="tr" class="lang">
+        <h1>Quiz Fatihi</h1>
+        <p class="subtitle">Resmî Destek Sayfası</p>
+
+        <p>
+          <strong>Quiz Fatihi</strong>'ni oynadığınız için teşekkür ederiz!
+          Herhangi bir sorun yaşarsanız, sorularınız olursa veya geri bildirim
+          paylaşmak isterseniz size yardımcı olmaktan memnuniyet duyarız.
+        </p>
+
+        <h2>Yaygın Destek Konuları</h2>
+
+        <ul>
+          <li>Oyunun çökmesi veya performans sorunları</li>
+          <li>Oynanış ya da kurallar hakkındaki sorular</li>
+          <li>Hata bildirimleri ve teknik sorunlar</li>
+          <li>Gelecek güncellemeler için öneriler</li>
+          <li>Genel geri bildirim ve destek talepleri</li>
+        </ul>
+
+        <div class="contact">
+          <strong>Destek Ekibiyle İletişime Geçin</strong><br><br>
+          <a href="mailto:hsyn.ekn@gmail.com">hsyn.ekn@gmail.com</a>
+        </div>
+      </section>
 
     </div>
 
-    <footer>
+    <footer id="support-footer">
       © 2026 Quiz Fatihi. All rights reserved.
     </footer>
   </div>
 
-</div><div id='en' class='lang'><div class="container"><div class="card"><h1>Quiz Fatihi</h1><p class="subtitle">Official Support Page</p><p>Thank you for playing <strong>Quiz Fatihi</strong>! If you experience any issues, have questions, or would like to share feedback, we're happy to help.</p><h2>Common Help Topics</h2><ul><li>Game crashes or performance issues</li><li>Questions about gameplay or rules</li><li>Bug reports and technical problems</li><li>Suggestions for future updates</li><li>General feedback and support requests</li></ul><div class="contact"><strong>Contact Support</strong><br><br><a href="mailto:hsyn.ekn@gmail.com">hsyn.ekn@gmail.com</a></div></div><footer>© 2026 Quiz Fatihi. All rights reserved.</footer></div></div><script>
-document.getElementById('tr').innerHTML=document.getElementById('tr').innerHTML.replace('Official Support Page','Resmi Destek Sayfası').replace('Thank you for playing <strong>Quiz Fatihi</strong>! If you experience
-        any issues, have questions, or would like to share feedback, we\'re
-        happy to help.','<strong>Quiz Fatihi</strong> oynadığınız için teşekkür ederiz! Herhangi bir sorun yaşarsanız, sorularınız olursa veya geri bildirim paylaşmak isterseniz size yardımcı olmaktan memnuniyet duyarız.').replace('Common Help Topics','Yaygın Destek Konuları').replace('Game crashes or performance issues','Oyunun çökmesi veya performans sorunları').replace('Questions about gameplay or rules','Oynanış veya kurallarla ilgili sorular').replace('Bug reports and technical problems','Hata bildirimleri ve teknik sorunlar').replace('Suggestions for future updates','Gelecek güncellemeler için öneriler').replace('General feedback and support requests','Genel geri bildirim ve destek talepleri').replace('Contact Support','Destek İletişimi').replace('All rights reserved.','Tüm hakları saklıdır.');
-function changeLanguage(l){document.querySelectorAll('.lang').forEach(e=>e.classList.remove('active'));document.getElementById(l).classList.add('active');localStorage.setItem('support_lang',l);}
-changeLanguage(localStorage.getItem('support_lang')||'tr');
-</script></body>
+  <script>
+    const supportTitles = {
+      en: "Quiz Fatihi - Support",
+      tr: "Quiz Fatihi - Destek"
+    };
+
+    const supportFooters = {
+      en: "© 2026 Quiz Fatihi. All rights reserved.",
+      tr: "© 2026 Quiz Fatihi. Tüm hakları saklıdır."
+    };
+
+    const supportButtons = document.querySelectorAll(".language-button");
+    const supportSections = document.querySelectorAll(".lang");
+    const supportSwitcher = document.querySelector(".language-switcher");
+    const supportFooter = document.getElementById("support-footer");
+
+    function changeSupportLanguage(language) {
+      const selectedLanguage = language === "tr" ? "tr" : "en";
+
+      supportSections.forEach((section) => {
+        section.classList.toggle("active", section.id === selectedLanguage);
+      });
+
+      supportButtons.forEach((button) => {
+        const isActive = button.dataset.language === selectedLanguage;
+        button.classList.toggle("active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+
+      document.documentElement.lang = selectedLanguage;
+      document.title = supportTitles[selectedLanguage];
+      supportFooter.textContent = supportFooters[selectedLanguage];
+      supportSwitcher.setAttribute(
+        "aria-label",
+        selectedLanguage === "tr" ? "Dil seçimi" : "Language selection"
+      );
+
+      localStorage.setItem("quizfatihi-support-language", selectedLanguage);
+    }
+
+    supportButtons.forEach((button) => {
+      button.addEventListener("click", () => changeSupportLanguage(button.dataset.language));
+    });
+
+    const savedSupportLanguage = localStorage.getItem("quizfatihi-support-language");
+    const browserSupportLanguage = navigator.language.toLowerCase().startsWith("tr") ? "tr" : "en";
+
+    changeSupportLanguage(savedSupportLanguage || browserSupportLanguage);
+  </script>
+
+</body>
+
 </html>
