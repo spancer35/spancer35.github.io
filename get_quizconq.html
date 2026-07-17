@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
+
+  <title>Quiz Fatihi</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(145deg, #17152b, #292052);
+      color: #ffffff;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 390px;
+      padding: 34px 26px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(12px);
+    }
+
+    .icon {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 18px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+    
+    .icon img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 27px;
+    }
+
+    p {
+      margin: 0 0 24px;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.5;
+    }
+
+    .buttons {
+      display: grid;
+      gap: 12px;
+    }
+
+    .button {
+      display: block;
+      padding: 14px 18px;
+      border-radius: 14px;
+      background: #ffffff;
+      color: #211942;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    .status {
+      margin-top: 18px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+    <div class="icon">
+    <img src="icon.png" alt="Quiz Fatihi">
+    </div>
+
+    <h1>Quiz Fatihi</h1>
+
+    <p id="message">
+      Uygulama mağazasına yönlendiriliyorsun...
+    </p>
+
+    <div class="buttons">
+      <a
+        class="button"
+        href="https://apps.apple.com/tr/app/quiz-fatihi/id6789055288"
+      >
+        App Store'dan İndir
+      </a>
+
+      <a
+        class="button"
+        href="https://play.google.com/store/apps/details?id=com.quizconq.app"
+      >
+        Google Play'den İndir
+      </a>
+    </div>
+
+    <div class="status">Quiz Fatihi mobil uygulaması</div>
+  </main>
+
+  <script>
+    const IOS_URL =
+      "https://apps.apple.com/tr/app/quiz-fatihi/id6789055288";
+
+    const ANDROID_URL =
+      "https://play.google.com/store/apps/details?id=com.quizconq.app";
+
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    const isAndroid = /android/i.test(userAgent);
+
+    const isIOS =
+      /iPad|iPhone|iPod/i.test(userAgent) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+    if (isAndroid) {
+      window.location.replace(ANDROID_URL);
+    } else if (isIOS) {
+      window.location.replace(IOS_URL);
+    } else {
+      document.getElementById("message").textContent =
+        "Cihazına uygun mağazayı seçerek Quiz Fatihi'ni indirebilirsin.";
+    }
+  </script>
+</body>
+</html>
