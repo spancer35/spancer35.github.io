@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Çengel - Support</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 48px 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 36px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #1f2937;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #6b7280;
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-top: 28px;
+      margin-bottom: 12px;
+      color: #1f2937;
+    }
+
+    p {
+      margin-bottom: 12px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .contact {
+      margin-top: 32px;
+      padding: 18px;
+      background: #f3f4f6;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .contact a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-word;
+    }
+
+    .card p a {
+      color: #2563eb;
+      font-weight: 600;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 28px;
+      color: #9ca3af;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 24px 16px;
+      }
+
+      .card {
+        padding: 24px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+
+
+    .language-switcher-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 18px;
+    }
+
+    .language-switcher {
+      display: inline-flex;
+      padding: 4px;
+      border: 1px solid #d1d5db;
+      border-radius: 999px;
+      background: #f3f4f6;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .language-button {
+      min-width: 52px;
+      padding: 7px 14px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: #6b7280;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .language-button:hover {
+      color: #1f2937;
+    }
+
+    .language-button.active {
+      background: #2563eb;
+      color: #fff;
+      box-shadow: 0 2px 5px rgba(37, 99, 235, 0.28);
+    }
+
+    .language-button:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, 0.28);
+      outline-offset: 2px;
+    }
+
+    .lang {
+      display: none;
+    }
+
+    .lang.active {
+      display: block;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="language-switcher-wrapper">
+      <div class="language-switcher" role="group" aria-label="Language selection">
+        <button class="language-button" type="button" data-language="en" aria-pressed="false">EN</button>
+        <button class="language-button" type="button" data-language="tr" aria-pressed="false">TR</button>
+      </div>
+    </div>
+
+    <div class="card">
+
+      <section id="en" class="lang">
+        <h1>Çengel</h1>
+        <p class="subtitle">Official Support Page</p>
+
+        <p>
+          Thank you for playing <strong>Çengel</strong>! If you experience
+          any issues, have questions, or would like to share feedback, we're
+          happy to help.
+        </p>
+
+        <h2>Common Help Topics</h2>
+
+        <ul>
+          <li>Game crashes or performance issues</li>
+          <li>Questions about gameplay or rules</li>
+          <li>Wrong or unclear clues and answers</li>
+          <li>Bug reports and technical problems</li>
+          <li>Suggestions for future updates</li>
+        </ul>
+
+        <p>
+          When reporting a problem, please include your device model and, if possible,
+          the level or daily puzzle number.
+        </p>
+
+        <p><a href="privacy.html">Privacy Policy</a></p>
+
+        <div class="contact">
+          <strong>Contact Support</strong><br><br>
+          <a href="mailto:hsyn.ekn@gmail.com">hsyn.ekn@gmail.com</a>
+        </div>
+      </section>
+
+      <section id="tr" class="lang">
+        <h1>Çengel</h1>
+        <p class="subtitle">Resmî Destek Sayfası</p>
+
+        <p>
+          <strong>Çengel</strong>'i oynadığınız için teşekkür ederiz!
+          Herhangi bir sorun yaşarsanız, sorularınız olursa veya geri bildirim
+          paylaşmak isterseniz size yardımcı olmaktan memnuniyet duyarız.
+        </p>
+
+        <h2>Yaygın Destek Konuları</h2>
+
+        <ul>
+          <li>Oyunun çökmesi veya performans sorunları</li>
+          <li>Oynanış ya da kurallar hakkındaki sorular</li>
+          <li>Hatalı veya belirsiz ipuçları ve cevaplar</li>
+          <li>Hata bildirimleri ve teknik sorunlar</li>
+          <li>Gelecek güncellemeler için öneriler</li>
+        </ul>
+
+        <p>
+          Bir sorun bildirirken lütfen cihaz modelinizi ve mümkünse bölüm ya da günlük
+          bulmaca numarasını da yazın.
+        </p>
+
+        <p><a href="privacy.html">Gizlilik Politikası</a></p>
+
+        <div class="contact">
+          <strong>Destek Ekibiyle İletişime Geçin</strong><br><br>
+          <a href="mailto:hsyn.ekn@gmail.com">hsyn.ekn@gmail.com</a>
+        </div>
+      </section>
+
+    </div>
+
+    <footer id="page-footer">
+      © 2026 Spancer Studios. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    const pageTitles = {
+      en: "Çengel - Support",
+      tr: "Çengel - Destek"
+    };
+
+    const pageFooters = {
+      en: "© 2026 Spancer Studios. All rights reserved.",
+      tr: "© 2026 Spancer Studios. Tüm hakları saklıdır."
+    };
+
+    const pageButtons = document.querySelectorAll(".language-button");
+    const pageSections = document.querySelectorAll(".lang");
+    const pageSwitcher = document.querySelector(".language-switcher");
+    const pageFooter = document.getElementById("page-footer");
+
+    function changePageLanguage(language) {
+      const selectedLanguage = language === "tr" ? "tr" : "en";
+
+      pageSections.forEach((section) => {
+        section.classList.toggle("active", section.id === selectedLanguage);
+      });
+
+      pageButtons.forEach((button) => {
+        const isActive = button.dataset.language === selectedLanguage;
+        button.classList.toggle("active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+
+      document.documentElement.lang = selectedLanguage;
+      document.title = pageTitles[selectedLanguage];
+      pageFooter.textContent = pageFooters[selectedLanguage];
+      pageSwitcher.setAttribute(
+        "aria-label",
+        selectedLanguage === "tr" ? "Dil seçimi" : "Language selection"
+      );
+
+      try {
+        localStorage.setItem("cengel-page-language", selectedLanguage);
+      } catch (e) {}
+    }
+
+    pageButtons.forEach((button) => {
+      button.addEventListener("click", () => changePageLanguage(button.dataset.language));
+    });
+
+    let savedPageLanguage = null;
+    try {
+      savedPageLanguage = localStorage.getItem("cengel-page-language");
+    } catch (e) {}
+    const browserPageLanguage = navigator.language.toLowerCase().startsWith("tr") ? "tr" : "en";
+
+    changePageLanguage(savedPageLanguage || browserPageLanguage);
+  </script>
+
+</body>
+
+</html>
