@@ -180,10 +180,11 @@
 
         <p>
           This privacy policy explains how <strong>Çengel</strong> ("the app"), developed by
-          Spancer Studios, handles your information. In short: we do not run servers, do not
-          require an account and do not collect personal data ourselves. The free version of
-          the app shows ads served by Google AdMob, which collects some device data as
-          described below.
+          Spancer Studios, handles your information. In short: you can play without signing up; the
+          app gives you an anonymous account so your progress can be saved in the cloud, and you can
+          link a Google or Apple account to keep it across devices. We use Google's Firebase for
+          accounts, cloud save, usage statistics and crash reports, and the free version shows ads
+          served by Google AdMob. We never sell your data.
         </p>
 
         <h2>Data stored on your device</h2>
@@ -196,8 +197,43 @@
           <li>App settings (languages, reminder time) and your ad consent choice</li>
         </ul>
         <p>
-          This data is not sent to us. You can delete it at any time by clearing the app's
-          data or uninstalling the app.
+          You can delete this on-device data at any time by clearing the app's data or
+          uninstalling the app. Part of it is also kept in your cloud save (see below).
+        </p>
+
+        <h2>Account and sign-in (Firebase Authentication)</h2>
+        <p>
+          When you start playing, the app creates an anonymous account with a random user ID; it
+          contains no personal information. In Settings → Account you can link a Google or Apple
+          account. Then we receive from Google or Apple your email address and, if available, your
+          name (with Apple's "Hide My Email" we only see a relay address). We use these only to sign
+          you in and to recognise your account on another device.
+        </p>
+
+        <h2>Cloud save (Cloud Firestore)</h2>
+        <p>
+          Linked to your user ID, the app saves in the cloud: the levels you finished and their
+          stars, your word notebook (the words you solved) and your daily puzzle results (time and
+          hints used). This lets you continue on another device. Unfinished puzzles, your hint
+          balance and your settings stay on your device. The cloud save is stored by Google in the
+          European Union (Firebase region eur3) and only you can access it.
+        </p>
+
+        <h2>Usage statistics (Google Analytics for Firebase)</h2>
+        <p>
+          To see how the game is played and improve it, the app records events such as starting and
+          finishing a puzzle, the stars earned, hints used, watching a rewarded ad and finishing the
+          daily puzzle, together with an app instance ID, device and app information and the
+          approximate location derived from your IP address. These statistics are not linked to
+          your account, your name or your email. In the EEA, the UK and Switzerland the app does not
+          collect usage statistics at all.
+        </p>
+
+        <h2>Crash reports (Firebase Crashlytics)</h2>
+        <p>
+          If the app crashes, a crash report is sent with the error details, the device model,
+          operating system and app version, and an installation ID. We use it only to fix bugs;
+          it is kept for 90 days.
         </p>
 
         <h2>Advertising (Google AdMob)</h2>
@@ -248,12 +284,28 @@
           in Settings at any time.
         </p>
 
-        <h2>Other third-party services</h2>
+        <h2>Service providers and data transfers</h2>
         <p>
-          Apart from Google AdMob (including Google's consent form), the app does not use
-          analytics, crash reporting or any other third-party service that collects data. If
-          this changes in a future version (for example, cloud save), this policy will be
-          updated before that version is released.
+          We use Google (Firebase and AdMob) and, if you choose Apple sign-in, Apple as service
+          providers. They process data on our behalf or as described in their own policies
+          (<a href="https://firebase.google.com/support/privacy">Firebase privacy</a>,
+          <a href="https://policies.google.com/privacy">Google Privacy Policy</a>,
+          <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a>). Some of this data may
+          be processed outside your country, including in the United States, under the safeguards
+          these providers offer. We do not use any other service that collects data.
+        </p>
+
+        <h2>Legal basis</h2>
+        <p>
+          We process account and cloud save data to provide the service you ask for (contract),
+          crash reports and usage statistics based on our legitimate interest in a working and
+          better game, and personalised ads only with your consent where the law requires it.
+        </p>
+
+        <h2>Data retention</h2>
+        <p>
+          Your account and cloud save are kept until you delete your account. Usage statistics are
+          kept for at most 14 months and crash reports for 90 days.
         </p>
 
         <h2>Clipboard</h2>
@@ -268,13 +320,14 @@
           information from children.
         </p>
 
-        <h2>Your rights</h2>
+        <h2>Your rights and deleting your account</h2>
         <p>
-          We do not hold personal data about you on any server, so there is no personal data
-          for us to access, correct or delete on request. Data collected by Google for ads is
-          governed by Google's privacy policy; you can manage it with the choices above and
-          in your Google account. If you have any questions about your rights under GDPR or
-          KVKK (Turkish Personal Data Protection Law), feel free to contact us.
+          You can delete your account and cloud save at any time in the app (Settings → Account →
+          Delete account) or by email; see <a href="delete-account.html">Account Deletion</a>.
+          Under GDPR and KVKK (Turkish Personal Data Protection Law) you also have the right to
+          access, correct, and receive a copy of your data and to object to its processing; contact
+          us for any of these. Data collected by Google for ads can be managed with the choices
+          above and in your Google account.
         </p>
 
         <h2>Changes to this policy</h2>
@@ -295,10 +348,12 @@
 
         <p>
           Bu gizlilik politikası, Spancer Studios tarafından geliştirilen <strong>Çengel</strong>
-          ("uygulama") uygulamasının bilgilerinizi nasıl ele aldığını açıklar. Kısaca: sunucu
-          işletmiyoruz, hesap gerektirmiyoruz ve kendimiz kişisel veri toplamıyoruz. Uygulamanın
-          ücretsiz sürümü Google AdMob tarafından sunulan reklamlar gösterir; AdMob aşağıda
-          açıklanan bazı cihaz verilerini toplar.
+          ("uygulama") uygulamasının bilgilerinizi nasıl ele aldığını açıklar. Kısaca: kayıt olmadan
+          oynayabilirsiniz; ilerlemeniz buluta kaydedilebilsin diye uygulama size anonim bir hesap açar,
+          bu ilerlemeyi cihazlar arasında korumak için Google veya Apple hesabınızı bağlayabilirsiniz.
+          Hesap, bulut kayıt, kullanım istatistikleri ve çökme raporları için Google'ın Firebase
+          hizmetlerini kullanırız; ücretsiz sürüm Google AdMob reklamları gösterir. Verilerinizi asla
+          satmayız.
         </p>
 
         <h2>Cihazınızda saklanan veriler</h2>
@@ -311,8 +366,45 @@
           <li>Uygulama ayarları (diller, hatırlatma saati) ve reklam onayı tercihiniz</li>
         </ul>
         <p>
-          Bu veriler bize gönderilmez. Uygulama verilerini temizleyerek veya uygulamayı
-          kaldırarak bunları istediğiniz zaman silebilirsiniz.
+          Cihazınızdaki bu verileri uygulama verilerini temizleyerek veya uygulamayı kaldırarak
+          istediğiniz zaman silebilirsiniz. Bir kısmı bulut kaydınızda da tutulur (aşağıya bakın).
+        </p>
+
+        <h2>Hesap ve giriş (Firebase Authentication)</h2>
+        <p>
+          Oynamaya başladığınızda uygulama rastgele bir kullanıcı kimliğiyle anonim bir hesap açar;
+          bu hesap hiçbir kişisel bilgi içermez. Ayarlar → Hesap bölümünden Google veya Apple
+          hesabınızı bağlayabilirsiniz. Bu durumda Google veya Apple'dan e-posta adresinizi ve varsa
+          adınızı alırız (Apple'ın "E-postamı Gizle" özelliğinde yalnızca bir yönlendirme adresi
+          görürüz). Bunları yalnızca giriş yapmanız ve hesabınızın başka bir cihazda tanınması için
+          kullanırız.
+        </p>
+
+        <h2>Bulut kayıt (Cloud Firestore)</h2>
+        <p>
+          Kullanıcı kimliğinize bağlı olarak uygulama şunları buluta kaydeder: bitirdiğiniz bölümler
+          ve yıldızları, kelime defteriniz (çözdüğünüz kelimeler) ve günlük bulmaca sonuçlarınız
+          (süre ve kullanılan ipucu). Böylece başka bir cihazda kaldığınız yerden devam
+          edebilirsiniz. Yarım kalan bulmacalar, ipucu bakiyeniz ve ayarlarınız cihazınızda kalır.
+          Bulut kayıt Google tarafından Avrupa Birliği'nde (Firebase bölgesi eur3) saklanır ve ona
+          yalnızca siz erişebilirsiniz.
+        </p>
+
+        <h2>Kullanım istatistikleri (Google Analytics for Firebase)</h2>
+        <p>
+          Oyunun nasıl oynandığını görüp geliştirmek için uygulama; bulmaca başlatma ve bitirme,
+          kazanılan yıldızlar, kullanılan ipuçları, ödüllü reklam izleme ve günlük bulmacayı bitirme
+          gibi olayları bir uygulama örneği kimliği, cihaz ve uygulama bilgileri ve IP adresinden
+          çıkarılan yaklaşık konumla birlikte kaydeder. Bu istatistikler hesabınızla, adınızla veya
+          e-postanızla ilişkilendirilmez. AB, Birleşik Krallık ve İsviçre'de uygulama kullanım
+          istatistiği hiç toplamaz.
+        </p>
+
+        <h2>Çökme raporları (Firebase Crashlytics)</h2>
+        <p>
+          Uygulama çökerse hata ayrıntıları, cihaz modeli, işletim sistemi, uygulama sürümü ve bir
+          kurulum kimliği içeren bir çökme raporu gönderilir. Bunu yalnızca hataları düzeltmek için
+          kullanırız; 90 gün saklanır.
         </p>
 
         <h2>Reklamlar (Google AdMob)</h2>
@@ -366,12 +458,28 @@
           zaman kapatabilirsiniz.
         </p>
 
-        <h2>Diğer üçüncü taraf hizmetler</h2>
+        <h2>Hizmet sağlayıcılar ve veri aktarımı</h2>
         <p>
-          Google AdMob (Google'ın onay formu dahil) dışında uygulama analiz, çökme raporlama veya
-          veri toplayan başka herhangi bir üçüncü taraf hizmet kullanmaz. Bu durum gelecekteki
-          bir sürümde değişirse (örneğin bulut kaydı), bu politika o sürüm yayınlanmadan önce
-          güncellenecektir.
+          Hizmet sağlayıcı olarak Google'ı (Firebase ve AdMob) ve Apple ile girişi seçerseniz Apple'ı
+          kullanırız. Bu şirketler verileri bizim adımıza veya kendi politikalarında açıklandığı
+          şekilde işler (<a href="https://firebase.google.com/support/privacy">Firebase gizliliği</a>,
+          <a href="https://policies.google.com/privacy?hl=tr">Google Gizlilik Politikası</a>,
+          <a href="https://www.apple.com/tr/legal/privacy/">Apple Gizlilik Politikası</a>). Bu verilerin
+          bir kısmı, bu sağlayıcıların sunduğu güvenceler altında, Amerika Birleşik Devletleri dahil
+          yurt dışında işlenebilir. Veri toplayan başka bir hizmet kullanmayız.
+        </p>
+
+        <h2>Hukuki dayanak</h2>
+        <p>
+          Hesap ve bulut kayıt verilerini istediğiniz hizmeti sunmak (sözleşmenin ifası), çökme
+          raporlarını ve kullanım istatistiklerini çalışan ve gelişen bir oyun için meşru menfaatimiz,
+          kişiselleştirilmiş reklamları ise yasanın gerektirdiği yerlerde yalnızca onayınızla işleriz.
+        </p>
+
+        <h2>Saklama süresi</h2>
+        <p>
+          Hesabınız ve bulut kaydınız siz hesabınızı silene kadar saklanır. Kullanım istatistikleri
+          en fazla 14 ay, çökme raporları 90 gün saklanır.
         </p>
 
         <h2>Pano</h2>
@@ -386,14 +494,13 @@
           bir bilgi toplamayız.
         </p>
 
-        <h2>Haklarınız</h2>
+        <h2>Haklarınız ve hesabınızı silme</h2>
         <p>
-          Hakkınızda herhangi bir sunucuda kişisel veri tutmadığımız için talep üzerine
-          erişilecek, düzeltilecek veya silinecek bir kişisel veriniz bizde bulunmamaktadır.
-          Reklamlar için Google tarafından toplanan veriler Google'ın gizlilik politikasına
-          tabidir; bunları yukarıdaki tercihlerle ve Google hesabınızdan yönetebilirsiniz.
-          KVKK veya GDPR kapsamındaki haklarınızla ilgili sorularınız için bizimle iletişime
-          geçebilirsiniz.
+          Hesabınızı ve bulut kaydınızı istediğiniz zaman uygulamadan (Ayarlar → Hesap → Hesabı sil)
+          veya e-postayla silebilirsiniz; bkz. <a href="delete-account.html">Hesap Silme</a>. KVKK ve
+          GDPR kapsamında verilerinize erişme, düzeltilmesini isteme, bir kopyasını alma ve işlenmesine
+          itiraz etme haklarınız da vardır; bunlar için bizimle iletişime geçin. Reklamlar için Google
+          tarafından toplanan verileri yukarıdaki tercihlerle ve Google hesabınızdan yönetebilirsiniz.
         </p>
 
         <h2>Bu politikadaki değişiklikler</h2>

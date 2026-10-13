@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Çengel - Account Deletion</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 48px 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 36px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #1f2937;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #6b7280;
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-top: 28px;
+      margin-bottom: 12px;
+      color: #1f2937;
+    }
+
+    p {
+      margin-bottom: 12px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .contact {
+      margin-top: 32px;
+      padding: 18px;
+      background: #f3f4f6;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .contact a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-word;
+    }
+
+    .card a {
+      color: #2563eb;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 28px;
+      color: #9ca3af;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 24px 16px;
+      }
+
+      .card {
+        padding: 24px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+
+
+    .language-switcher-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 18px;
+    }
+
+    .language-switcher {
+      display: inline-flex;
+      padding: 4px;
+      border: 1px solid #d1d5db;
+      border-radius: 999px;
+      background: #f3f4f6;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .language-button {
+      min-width: 52px;
+      padding: 7px 14px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: #6b7280;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .language-button:hover {
+      color: #1f2937;
+    }
+
+    .language-button.active {
+      background: #2563eb;
+      color: #fff;
+      box-shadow: 0 2px 5px rgba(37, 99, 235, 0.28);
+    }
+
+    .language-button:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, 0.28);
+      outline-offset: 2px;
+    }
+
+    .box {
+      background: #f7f9fb;
+      border: 1px solid #d8e3ec;
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin: 8px 0 16px;
+    }
+
+    .box h2 {
+      margin-top: 0;
+    }
+
+    .card a {
+      color: #2563eb;
+    }
+
+    .lang {
+      display: none;
+    }
+
+    .lang.active {
+      display: block;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="language-switcher-wrapper">
+      <div class="language-switcher" role="group" aria-label="Language selection">
+        <button class="language-button" type="button" data-language="en" aria-pressed="false">EN</button>
+        <button class="language-button" type="button" data-language="tr" aria-pressed="false">TR</button>
+      </div>
+    </div>
+
+    <div class="card">
+
+      <section id="en" class="lang">
+        <h1>Çengel</h1>
+        <p class="subtitle">Account Deletion · Last updated: October 13, 2026</p>
+
+        <p>
+          You can delete your <strong>Çengel</strong> account and your cloud save at any time,
+          directly in the app. If you no longer have the app, you can ask us by email.
+        </p>
+
+        <div class="box">
+          <h2>Delete your account in the app</h2>
+          <ol>
+            <li>Open Çengel and tap the gear icon on the main screen to open <strong>Settings</strong>.</li>
+            <li>Under <strong>Account</strong>, tap <strong>Delete account</strong>.</li>
+            <li>Confirm with <strong>Delete</strong>. If you signed in a while ago, you may be asked to sign in with Google or Apple once more.</li>
+          </ol>
+          <p>Your account and cloud save are deleted right away.</p>
+        </div>
+
+        <h2>Delete your account without the app</h2>
+        <p>
+          Send an email to <a href="mailto:hsyn.ekn@gmail.com?subject=%C3%87engel%20account%20deletion">hsyn.ekn@gmail.com</a>
+          with the subject "Çengel account deletion", from the email address of the Google or Apple
+          account you used to sign in to Çengel (for "Hide My Email" Apple accounts, tell us the
+          relay address). We will delete your account and cloud save within 30 days and confirm
+          by email.
+        </p>
+        <p>
+          If you never linked a Google or Apple account, your progress is only on your device and
+          in an anonymous account that we cannot connect to you: delete it in the app as described
+          above, or simply uninstall the app.
+        </p>
+
+        <h2>What is deleted</h2>
+        <ul>
+          <li>Your sign-in account: the user ID and, if linked, your Google or Apple email address and name.</li>
+          <li>Your cloud save: finished levels and stars, your word notebook and your daily puzzle results.</li>
+        </ul>
+
+        <h2>What is not deleted</h2>
+        <ul>
+          <li>Progress stored on your device stays there until you clear the app's data or uninstall it.</li>
+          <li>Usage statistics (Google Analytics for Firebase) and crash reports (Firebase Crashlytics) are
+            not linked to your account; Google deletes them automatically after their retention period
+            (at most 14 months for statistics, 90 days for crash reports).</li>
+          <li>Advertising data is handled by Google AdMob; you can reset or delete your advertising ID in your
+            device settings.</li>
+        </ul>
+
+        <p>
+          More details are in our <a href="privacy.html">Privacy Policy</a>.
+        </p>
+
+        <div class="contact">
+          <strong>Contact</strong><br><br>
+          <a href="mailto:hsyn.ekn@gmail.com">hsyn.ekn@gmail.com</a>
+        </div>
+      </section>
+
+      <section id="tr" class="lang">
+        <h1>Çengel</h1>
+        <p class="subtitle">Hesap Silme · Son güncelleme: 13 Ekim 2026</p>
+
+        <p>
+          <strong>Çengel</strong> hesabınızı ve bulut kaydınızı istediğiniz zaman doğrudan uygulamadan
+          silebilirsiniz. Uygulama artık elinizde değilse bize e-postayla yazabilirsiniz.
+        </p>
+
+        <div class="box">
+          <h2>Hesabınızı uygulamadan silin</h2>
+          <ol>
+            <li>Çengel'i açın ve ana ekrandaki dişli simgesine dokunarak <strong>Ayarlar</strong>'ı açın.</li>
+            <li><strong>Hesap</strong> bölümünde <strong>Hesabı sil</strong>'e dokunun.</li>
+            <li><strong>Sil</strong> ile onaylayın. Bir süre önce giriş yaptıysanız Google veya Apple ile bir kez daha giriş yapmanız istenebilir.</li>
+          </ol>
+          <p>Hesabınız ve bulut kaydınız hemen silinir.</p>
+        </div>
+
+        <h2>Hesabınızı uygulama olmadan silin</h2>
+        <p>
+          Çengel'e giriş yaptığınız Google veya Apple hesabının e-posta adresinden,
+          "Çengel hesap silme" konusuyla <a href="mailto:hsyn.ekn@gmail.com?subject=%C3%87engel%20hesap%20silme">hsyn.ekn@gmail.com</a>
+          adresine e-posta gönderin ("E-postamı Gizle" kullanan Apple hesaplarında yönlendirme
+          adresini belirtin). Hesabınızı ve bulut kaydınızı 30 gün içinde siler, e-postayla
+          bilgi veririz.
+        </p>
+        <p>
+          Hiç Google veya Apple hesabı bağlamadıysanız ilerlemeniz yalnızca cihazınızda ve sizinle
+          ilişkilendiremediğimiz anonim bir hesaptadır: yukarıdaki gibi uygulamadan silebilir ya da
+          uygulamayı kaldırabilirsiniz.
+        </p>
+
+        <h2>Neler silinir?</h2>
+        <ul>
+          <li>Giriş hesabınız: kullanıcı kimliğiniz ve bağladıysanız Google veya Apple e-posta adresiniz ve adınız.</li>
+          <li>Bulut kaydınız: bitirdiğiniz bölümler ve yıldızlar, kelime defteriniz ve günlük bulmaca sonuçlarınız.</li>
+        </ul>
+
+        <h2>Neler silinmez?</h2>
+        <ul>
+          <li>Cihazınızdaki ilerleme, uygulama verilerini temizleyene veya uygulamayı kaldırana kadar orada kalır.</li>
+          <li>Kullanım istatistikleri (Google Analytics for Firebase) ve çökme raporları (Firebase Crashlytics)
+            hesabınızla ilişkilendirilmez; Google bunları saklama süresi sonunda otomatik olarak siler
+            (istatistikler için en fazla 14 ay, çökme raporları için 90 gün).</li>
+          <li>Reklam verileri Google AdMob tarafından işlenir; reklam kimliğinizi cihaz ayarlarınızdan
+            sıfırlayabilir veya silebilirsiniz.</li>
+        </ul>
+
+        <p>
+          Ayrıntılar <a href="privacy.html">Gizlilik Politikası</a>'nda.
+        </p>
+
+        <div class="contact">
+          <strong>İletişim</strong><br><br>
+          <a href="mailto:hsyn.ekn@gmail.com">hsyn.ekn@gmail.com</a>
+        </div>
+      </section>
+
+    </div>
+
+    <footer id="page-footer">
+      © 2026 Spancer Studios. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    const pageTitles = {
+      en: "Çengel - Account Deletion",
+      tr: "Çengel - Hesap Silme"
+    };
+
+    const pageFooters = {
+      en: "© 2026 Spancer Studios. All rights reserved.",
+      tr: "© 2026 Spancer Studios. Tüm hakları saklıdır."
+    };
+
+    const pageButtons = document.querySelectorAll(".language-button");
+    const pageSections = document.querySelectorAll(".lang");
+    const pageSwitcher = document.querySelector(".language-switcher");
+    const pageFooter = document.getElementById("page-footer");
+
+    function changePageLanguage(language) {
+      const selectedLanguage = language === "tr" ? "tr" : "en";
+
+      pageSections.forEach((section) => {
+        section.classList.toggle("active", section.id === selectedLanguage);
+      });
+
+      pageButtons.forEach((button) => {
+        const isActive = button.dataset.language === selectedLanguage;
+        button.classList.toggle("active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+
+      document.documentElement.lang = selectedLanguage;
+      document.title = pageTitles[selectedLanguage];
+      pageFooter.textContent = pageFooters[selectedLanguage];
+      pageSwitcher.setAttribute(
+        "aria-label",
+        selectedLanguage === "tr" ? "Dil seçimi" : "Language selection"
+      );
+
+      try {
+        localStorage.setItem("cengel-page-language", selectedLanguage);
+      } catch (e) {}
+    }
+
+    pageButtons.forEach((button) => {
+      button.addEventListener("click", () => changePageLanguage(button.dataset.language));
+    });
+
+    let savedPageLanguage = null;
+    try {
+      savedPageLanguage = localStorage.getItem("cengel-page-language");
+    } catch (e) {}
+    const browserPageLanguage = navigator.language.toLowerCase().startsWith("tr") ? "tr" : "en";
+
+    changePageLanguage(savedPageLanguage || browserPageLanguage);
+  </script>
+
+</body>
+
+</html>
