@@ -185,6 +185,7 @@
       <div class="language-switcher" role="group" aria-label="Language selection">
         <button class="language-button" type="button" data-language="en" aria-pressed="false">EN</button>
         <button class="language-button" type="button" data-language="tr" aria-pressed="false">TR</button>
+        <button class="language-button" type="button" data-language="de" aria-pressed="false">DE</button>
       </div>
     </div>
 
@@ -308,6 +309,66 @@
         </div>
       </section>
 
+      <section id="de" class="lang">
+        <h1>Crosslingo</h1>
+        <p class="subtitle">Kontolöschung · Zuletzt aktualisiert: 28. Oktober 2026</p>
+
+        <p>
+          Du kannst dein <strong>Crosslingo</strong>-Konto und deinen Cloud-Spielstand jederzeit direkt
+          in der App löschen. Wenn du die App nicht mehr hast, kannst du uns per E-Mail schreiben.
+        </p>
+
+        <div class="box">
+          <h2>Konto in der App löschen</h2>
+          <ol>
+            <li>Öffne Crosslingo und tippe auf dem Hauptbildschirm auf das Zahnrad, um die <strong>Einstellungen</strong> zu öffnen.</li>
+            <li>Tippe unter <strong>Konto</strong> auf <strong>Konto löschen</strong>.</li>
+            <li>Bestätige mit <strong>Löschen</strong>. Wenn deine Anmeldung schon länger zurückliegt, wirst du eventuell gebeten, dich noch einmal mit Google oder Apple anzumelden.</li>
+          </ol>
+          <p>Dein Konto und dein Cloud-Spielstand werden sofort gelöscht.</p>
+        </div>
+
+        <h2>Konto ohne die App löschen</h2>
+        <p>
+          Schicke eine E-Mail mit dem Betreff „Crosslingo Kontolöschung“ an
+          <a href="mailto:spancerstudios@gmail.com?subject=Crosslingo%20Kontol%C3%B6schung">spancerstudios@gmail.com</a>,
+          und zwar von der E-Mail-Adresse des Google- oder Apple-Kontos, mit dem du dich bei Crosslingo
+          angemeldet hast (bei Apple-Konten mit „E-Mail-Adresse verbergen“ nenne uns bitte die
+          Weiterleitungsadresse). Wir löschen dein Konto und deinen Cloud-Spielstand innerhalb von
+          30 Tagen und bestätigen es dir per E-Mail.
+        </p>
+        <p>
+          Wenn du nie ein Google- oder Apple-Konto verknüpft hast, liegt dein Fortschritt nur auf deinem
+          Gerät und in einem anonymen Konto, das wir dir nicht zuordnen können: Lösche es wie oben
+          beschrieben in der App oder deinstalliere einfach die App.
+        </p>
+
+        <h2>Was gelöscht wird</h2>
+        <ul>
+          <li>Dein Anmeldekonto: die Nutzer-ID und, falls verknüpft, die E-Mail-Adresse und der Name deines Google- oder Apple-Kontos.</li>
+          <li>Dein Cloud-Spielstand: abgeschlossene Level und Sterne, deine Wortliste („Meine Wörter“) und deine Ergebnisse beim Tagesrätsel.</li>
+        </ul>
+
+        <h2>Was nicht gelöscht wird</h2>
+        <ul>
+          <li>Der Fortschritt auf deinem Gerät bleibt dort, bis du die App-Daten löschst oder die App deinstallierst.</li>
+          <li>Nutzungsstatistiken (Google Analytics for Firebase) und Absturzberichte (Firebase Crashlytics) sind
+            nicht mit deinem Konto verknüpft; Google löscht sie automatisch nach Ablauf der Aufbewahrungsfrist
+            (höchstens 14 Monate für Statistiken, 90 Tage für Absturzberichte).</li>
+          <li>Werbedaten werden von Google AdMob verarbeitet; du kannst deine Werbe-ID in den
+            Geräteeinstellungen zurücksetzen oder löschen.</li>
+        </ul>
+
+        <p>
+          Weitere Einzelheiten findest du in unserer <a href="privacy.html">Datenschutzerklärung</a>.
+        </p>
+
+        <div class="contact">
+          <strong>Kontakt</strong><br><br>
+          <a href="mailto:spancerstudios@gmail.com">spancerstudios@gmail.com</a>
+        </div>
+      </section>
+
     </div>
 
     <footer id="page-footer">
@@ -318,12 +379,14 @@
   <script>
     const pageTitles = {
       en: "Crosslingo - Account Deletion",
-      tr: "Crosslingo - Hesap Silme"
+      tr: "Crosslingo - Hesap Silme",
+      de: "Crosslingo - Kontolöschung"
     };
 
     const pageFooters = {
       en: "© 2026 Spancer Studios. All rights reserved.",
-      tr: "© 2026 Spancer Studios. Tüm hakları saklıdır."
+      tr: "© 2026 Spancer Studios. Tüm hakları saklıdır.",
+      de: "© 2026 Spancer Studios. Alle Rechte vorbehalten."
     };
 
     const pageButtons = document.querySelectorAll(".language-button");
@@ -332,7 +395,7 @@
     const pageFooter = document.getElementById("page-footer");
 
     function changePageLanguage(language) {
-      const selectedLanguage = language === "tr" ? "tr" : "en";
+      const selectedLanguage = pageTitles[language] ? language : "en";
 
       pageSections.forEach((section) => {
         section.classList.toggle("active", section.id === selectedLanguage);
@@ -349,7 +412,7 @@
       pageFooter.textContent = pageFooters[selectedLanguage];
       pageSwitcher.setAttribute(
         "aria-label",
-        selectedLanguage === "tr" ? "Dil seçimi" : "Language selection"
+        { en: "Language selection", tr: "Dil seçimi", de: "Sprachauswahl" }[selectedLanguage]
       );
 
       try {
@@ -365,7 +428,7 @@
     try {
       savedPageLanguage = localStorage.getItem("cengel-page-language");
     } catch (e) {}
-    const browserPageLanguage = navigator.language.toLowerCase().startsWith("tr") ? "tr" : "en";
+    const browserPageLanguage = navigator.language.toLowerCase().slice(0, 2);
 
     changePageLanguage(savedPageLanguage || browserPageLanguage);
   </script>
