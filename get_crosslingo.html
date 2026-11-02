@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crosslingo</title>
+  <meta name="description" content="Crosslingo: arrowword puzzles that teach you a language. Get it on Google Play and the App Store." />
+  <meta property="og:title" content="Crosslingo" />
+  <meta property="og:description" content="Arrowword puzzles that teach you a language." />
+  <meta property="og:image" content="https://spancer35.github.io/cengel/icon.png" />
+  <link rel="icon" href="cengel/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --paper: #faf7f0;
+      --ink: #27231f;
+      --line: #3a3430;
+      --clue: #f4d6dc;
+      --crimson: #c4163a;
+      --pen: #1e3f9e;
+      --muted: rgba(39, 35, 31, 0.62);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #1c1a17;
+        --ink: #ece6da;
+        --line: #8a8076;
+        --clue: #4a2e35;
+        --crimson: #ff5a72;
+        --pen: #8fb0ff;
+        --muted: rgba(236, 230, 218, 0.62);
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .card {
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .rule {
+      height: 4px;
+      background: var(--crimson);
+      margin-bottom: 26px;
+    }
+
+    .icon {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 16px;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 2px solid var(--line);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .icon img { width: 100%; height: 100%; display: block; }
+
+    h1 {
+      margin: 0;
+      font-size: 46px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--crimson);
+    }
+
+    .tagline {
+      margin: 4px 0 22px;
+      font-size: 21px;
+      font-weight: 500;
+    }
+
+    /* A tiny arrowword row: clue box + answer in pen. */
+    .sample {
+      display: inline-flex;
+      margin: 0 auto 24px;
+      border: 2px solid var(--line);
+    }
+
+    .sample span {
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-left: 1px solid var(--line);
+      font-family: "Patrick Hand", cursive;
+      font-size: 26px;
+      color: var(--pen);
+    }
+
+    .sample .clue {
+      width: auto;
+      padding: 0 10px 0 8px;
+      border-left: 0;
+      background: var(--clue);
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .sample .clue::after {
+      content: "▸";
+      margin-left: 4px;
+      color: var(--crimson);
+    }
+
+    #message {
+      margin: 0 0 18px;
+      font-size: 19px;
+      color: var(--muted);
+    }
+
+    .buttons { display: grid; gap: 12px; }
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 12px 18px;
+      border: 2px solid var(--crimson);
+      background: var(--paper);
+      color: var(--crimson);
+      text-decoration: none;
+      font-size: 21px;
+      font-weight: 700;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .button:hover, .button:focus-visible {
+      background: var(--crimson);
+      color: var(--paper);
+    }
+
+    .button svg { width: 24px; height: 24px; fill: currentColor; flex: none; }
+
+    .footer {
+      margin-top: 26px;
+      font-size: 16px;
+      color: var(--muted);
+    }
+
+    .footer a { color: inherit; }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+    <div class="rule"></div>
+    <div class="icon"><img src="cengel/icon.png" alt="Crosslingo" /></div>
+    <h1>Crosslingo</h1>
+    <div class="tagline" id="tagline">Arrowword puzzles that teach you a language</div>
+
+    <div class="sample" aria-hidden="true">
+      <span class="clue" id="sample-clue">Kedi</span><span>C</span><span>A</span><span>T</span>
+    </div>
+
+    <p id="message">Taking you to the store…</p>
+
+    <div class="buttons">
+      <a class="button" id="play" href="https://play.google.com/store/apps/details?id=com.spancer.cengel">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1Zm11.6 11.6 2.4 2.4-11.2 6.4 8.8-8.8Zm0-2.8L6.4 1.8l11.2 6.4-2.4 2.4Zm3.7 6.3-2.7-2.7L19 11.9l-.1.1 2.6 1.5c.8.5.8 1.6 0 2.1l-2.6 1.5Z"/></svg>
+        <span id="play-label">Get it on Google Play</span>
+      </a>
+      <a class="button" id="ios" href="https://apps.apple.com/app/id6822236246">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4.1ZM13.9 4.9c.7-.9 1.2-2 1.1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.1.1 2.3-.6 3-1.5Z"/></svg>
+        <span id="ios-label">Download on the App Store</span>
+      </a>
+    </div>
+
+    <div class="footer">
+      <span id="contact">Contact</span>:
+      <a href="mailto:spancerstudios@gmail.com">spancerstudios@gmail.com</a>
+    </div>
+  </main>
+
+  <script>
+    const ANDROID_URL = "https://play.google.com/store/apps/details?id=com.spancer.cengel";
+    const IOS_URL = "https://apps.apple.com/app/id6822236246";
+
+    const TEXT = {
+      tr: {
+        tagline: "Çengel bulmaca çöz, yeni dil öğren",
+        clue: "Kedi",
+        answer: "CAT",
+        redirect: "Mağazaya yönlendiriliyorsun…",
+        choose: "Cihazına uygun mağazayı seç ve Crosslingo'yu indir.",
+        play: "Google Play'den indir",
+        ios: "App Store'dan indir",
+        contact: "İletişim",
+      },
+      en: {
+        tagline: "Arrowword puzzles that teach you a language",
+        clue: "Cat",
+        answer: "KEDİ",
+        redirect: "Taking you to the store…",
+        choose: "Pick your store and get Crosslingo.",
+        play: "Get it on Google Play",
+        ios: "Download on the App Store",
+        contact: "Contact",
+      },
+      de: {
+        tagline: "Löse Pfeilrätsel und lerne eine Sprache",
+        clue: "Katze",
+        answer: "CAT",
+        redirect: "Du wirst zum Store weitergeleitet…",
+        choose: "Wähle deinen Store und hol dir Crosslingo.",
+        play: "Jetzt bei Google Play",
+        ios: "Laden im App Store",
+        contact: "Kontakt",
+      },
+    };
+
+    const lang = (navigator.language || "en").slice(0, 2).toLowerCase();
+    const t = TEXT[lang] || TEXT.en;
+    document.documentElement.lang = TEXT[lang] ? lang : "en";
+    document.getElementById("tagline").textContent = t.tagline;
+    document.getElementById("play-label").textContent = t.play;
+    document.getElementById("ios-label").textContent = t.ios;
+    document.getElementById("contact").textContent = t.contact;
+
+    // The sample row: a clue in the reader's language, the answer in the
+    // language they would learn.
+    const sample = document.querySelector(".sample");
+    sample.innerHTML = "";
+    const clue = document.createElement("span");
+    clue.className = "clue";
+    clue.textContent = t.clue;
+    sample.appendChild(clue);
+    for (const ch of t.answer) {
+      const cell = document.createElement("span");
+      cell.textContent = ch;
+      sample.appendChild(cell);
+    }
+
+    const ua = navigator.userAgent || navigator.vendor || "";
+    const isAndroid = /android/i.test(ua);
+    const isIOS =
+      /iPad|iPhone|iPod/i.test(ua) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    // ?stay keeps the page open on a phone (to look at it or share it).
+    const stay = new URLSearchParams(location.search).has("stay");
+    const message = document.getElementById("message");
+
+    if (!stay && isAndroid) {
+      message.textContent = t.redirect;
+      window.location.replace(ANDROID_URL);
+    } else if (!stay && isIOS) {
+      message.textContent = t.redirect;
+      window.location.replace(IOS_URL);
+    } else {
+      message.textContent = t.choose;
+    }
+  </script>
+</body>
+</html>
