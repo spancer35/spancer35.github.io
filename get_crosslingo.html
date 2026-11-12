@@ -259,15 +259,55 @@
     const isIOS =
       /iPad|iPhone|iPod/i.test(ua) ||
       (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    const params = new URLSearchParams(location.search);
     // ?stay keeps the page open on a phone (to look at it or share it).
-    const stay = new URLSearchParams(location.search).has("stay");
+    const stay = params.has("stay");
     const message = document.getElementById("message");
+
+    // --- Stats (GoatCounter: no cookies, no personal data) ---------------
+    // Where the visitor came from, from the link: ?src=instagram (also
+    // ?utm_source= or ?ref=). Shown in GoatCounter as the page
+    // /get_crosslingo/<src>; store visits as events "store/<os>/<src>".
+    // Empty GOATCOUNTER = counting off.
+    const GOATCOUNTER = "https://spancer35.goatcounter.com";
+    const rawSource = params.get("src") || params.get("utm_source") || params.get("ref");
+    const source = rawSource === null
+      ? "direct"
+      : (rawSource.toLowerCase().replace(/[^a-z0-9_-]/g, "").slice(0, 40) || "other");
+    // Only the live site counts (not local copies or previews).
+    const counting = GOATCOUNTER !== "" && location.hostname === "spancer35.github.io";
+
+    function count(path, title, isEvent) {
+      if (!counting) return;
+      const q = new URLSearchParams({
+        p: path,
+        t: title,
+        r: document.referrer,
+        s: String(screen.width),
+        e: String(isEvent),
+        rnd: Math.random().toString(36).slice(2),
+      });
+      // keepalive: the request survives the redirect to the store.
+      fetch(GOATCOUNTER + "/count?" + q, { mode: "no-cors", keepalive: true })
+        .catch(() => {});
+    }
+
+    count("/get_crosslingo/" + source, "Crosslingo download page", false);
+
+    function storeVisit(os, how) {
+      count("store/" + os + "/" + source, "Store " + how + ": " + os, true);
+    }
+
+    document.getElementById("play").addEventListener("click", () => storeVisit("android", "click"));
+    document.getElementById("ios").addEventListener("click", () => storeVisit("ios", "click"));
 
     if (!stay && isAndroid) {
       message.textContent = t.redirect;
+      storeVisit("android", "redirect");
       window.location.replace(ANDROID_URL);
     } else if (!stay && isIOS) {
       message.textContent = t.redirect;
+      storeVisit("ios", "redirect");
       window.location.replace(IOS_URL);
     } else {
       message.textContent = t.choose;
